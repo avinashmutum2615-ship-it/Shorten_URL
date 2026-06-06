@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Shortner</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:Inter, Arial, sans-serif;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background:#F4F6F8;
+        }
+        .container{
+            width: 100%;
+            max-width: 450px;
+            background: #FFFFFF;
+            padding: 38px;
+            border-radius: 20px;
+            border: 1 px solid #DEE3E8;
+            box-shadow: 0 12px 35px rgba(20,71,229,.08);
+        }
+        h1{
+            font-size:2rem;
+            margin-bottom:10px;
+            color:#202C46;
+        }
+        label{
+            display:block;
+            margin-bottom:6px;
+            font-weight:bold;
+            color:#202C46;
+        }
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #DEE3E8;
+            border-radius:10px;
+            font-size:15px;
+            transition:0.3s;
+        }
+            input:focus{
+            border-color:#1447E5;   /* Primary blue */
+            outline:none;
+            box-shadow:0 0 8px rgba(20,71,229,0.2);
+        }
+        .btn-submit{
+            width:50%;
+            padding:12px;
+            border:none;
+            border-radius:10px;
+            background:#1447E5;   /* Medical blue */
+            color:white;
+            font-size:16px;
+            font-weight:bold;
+            cursor:pointer;
+            margin: 10px 0;
+            transition:0.3s;
+        }
+        .btn-submit:hover{
+            background:#0F38B8;
+            transform:translateY(-2px);
+        }
+        p{
+            color:#8D8797;
+            margin:25px 0;
+            font-size:14px;
+        }
+        a{
+            color:#1447E5;
+            text-decoration:none;
+            font-weight:bold;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortner</h1>
+        <form action="/short" method="post">
+            <label for="longUrl">Enter long URL :</label>
+            <input type="text" id="longUrl" name="longUrl" required>
+            <button type="submit" class="btn-submit">Shorten</button>
+        </form>
+        <% if(shortUrl) { %>
+            <p>Short URL :- <a href ="<%= shortUrl %>" target="_blank" />
+            <%= shortUrl %>
+            </p> <% } %>
+    </div>
+</body>
+</html>
