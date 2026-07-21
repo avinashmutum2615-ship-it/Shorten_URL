@@ -123,16 +123,3 @@ git push origin feature-name
 
 5. Open a Pull Request.
 
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**. Feel free to use and modify it for learning purposes.
-
----
-
-## 👨‍💻 Author
-
-**Avinash Mutum**
-
-B.Tech Student
